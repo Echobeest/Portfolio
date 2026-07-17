@@ -31,7 +31,7 @@ import {
 function App() {
   return (
     <SmoothScroll>
-      <div className="App bg-slate-950">
+      <div className="App bg-slate-950 overflow-x-hidden">
         <Header />
         <Hero personalInfo={personalInfo} />
         <About personalInfo={personalInfo} aboutText={aboutText} />

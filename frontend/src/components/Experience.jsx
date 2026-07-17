@@ -6,7 +6,7 @@ const Experience = ({ experience }) => {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="experience" className="relative py-32 bg-slate-900">
+    <section id="experience" className="relative py-32 bg-slate-900 overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -41,7 +41,7 @@ const Experience = ({ experience }) => {
           {/* Timeline */}
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/50 via-indigo-500/50 to-transparent transform md:-translate-x-1/2"></div>
+            <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/50 via-indigo-500/50 to-transparent md:-translate-x-1/2"></div>
 
             {/* Timeline Items */}
             <div className="space-y-16">
@@ -54,7 +54,7 @@ const Experience = ({ experience }) => {
                   className={`relative flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-0 md:left-1/2 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-indigo-400 transform md:-translate-x-1/2 z-10">
+                  <div className="absolute left-2 md:left-1/2 top-8 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-400 to-indigo-400 md:-translate-x-1/2 z-10">
                     <div className="absolute inset-0 rounded-full bg-cyan-400 animate-ping opacity-75"></div>
                   </div>
 
