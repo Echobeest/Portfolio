@@ -4,20 +4,18 @@ export const personalInfo = {
   name: "Prajwal Kakandaki",
   role: "Microsoft Dynamics 365 CRM Technical Consultant",
   subRoles: ["Power Platform Developer", ".NET Developer"],
-  experience: "4+ Years",
-  currentCompany: "Infosys",
-  previousCompany: "Sonata Software",
-  currentProject: "Microsoft Land & Lease",
+  experience: "Experienced",
   location: "India",
-  email: "prajwal.kakandaki@example.com",
-  phone: "+91 98765 43210",
+  email: "prajwalkakandaki1@gmail.com",
+  phone: "+91 72593 51598",
   linkedin: "https://linkedin.com/in/prajwalkakandaki",
   github: "https://github.com/prajwalkakandaki",
-  profileImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_azure-engineer-1/artifacts/eeu9lo55_Profile%20Photo.png"
+  profileImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_azure-engineer-1/artifacts/eeu9lo55_Profile%20Photo.png",
+  resumeUrl: "https://customer-assets-4nw71qhi.emergentagent.net/job_azure-engineer-1/artifacts/0as34nwd_Prajwal_Kakandaki%20Resume%20%281%29.pdf"
 };
 
 export const aboutText = {
-  intro: "I'm a seasoned Microsoft Dynamics 365 CRM Technical Consultant with over 4 years of experience in delivering enterprise-grade solutions. Currently working at Infosys on the Microsoft Land & Lease project, I specialize in architecting and implementing complex CRM solutions using Power Platform and .NET technologies.",
+  intro: "I'm a seasoned Microsoft Dynamics 365 CRM Technical Consultant with extensive experience in delivering enterprise-grade solutions. I specialize in architecting and implementing complex CRM solutions using Power Platform and .NET technologies.",
   passion: "My passion lies in transforming business challenges into elegant technical solutions, leveraging the full power of Microsoft's ecosystem to drive digital transformation."
 };
 
@@ -157,10 +155,10 @@ export const services = [
 ];
 
 export const statistics = [
-  { id: 1, number: 4, suffix: "+", label: "Years Experience" },
-  { id: 2, number: 50, suffix: "+", label: "Projects Completed" },
-  { id: 3, number: 25, suffix: "+", label: "Happy Clients" },
-  { id: 4, number: 100, suffix: "+", label: "CRM Solutions" }
+  { id: 1, number: 50, suffix: "+", label: "Projects Completed" },
+  { id: 2, number: 25, suffix: "+", label: "Happy Clients" },
+  { id: 3, number: 100, suffix: "+", label: "CRM Solutions" },
+  { id: 4, number: 15, suffix: "+", label: "Certifications" }
 ];
 
 export const certifications = [

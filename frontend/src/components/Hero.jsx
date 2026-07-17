@@ -126,9 +126,8 @@ const Hero = ({ personalInfo }) => {
               className="mb-12"
             >
               <div className="inline-block px-6 py-3 rounded-2xl bg-gradient-to-r from-cyan-500/10 to-indigo-500/10 backdrop-blur-sm border border-cyan-500/20">
-                <p className="text-2xl md:text-3xl font-bold text-white">
-                  {personalInfo.experience}
-                  <span className="text-cyan-400 ml-2">Experience</span>
+                <p className="text-xl md:text-2xl font-bold text-cyan-400">
+                  {personalInfo.experience} Professional
                 </p>
               </div>
             </motion.div>
@@ -165,6 +164,7 @@ const Hero = ({ personalInfo }) => {
               </Button>
 
               <Button
+                onClick={() => window.open(personalInfo.resumeUrl, '_blank')}
                 size="lg"
                 variant="outline"
                 className="px-8 py-6 text-lg border-2 border-white/20 hover:border-indigo-500/50 bg-white/5 hover:bg-white/10 backdrop-blur-sm text-white"

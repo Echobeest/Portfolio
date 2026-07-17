@@ -62,27 +62,12 @@ const About = ({ personalInfo, aboutText }) => {
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
                 <div className="relative flex items-start gap-4">
                   <div className="p-3 rounded-xl bg-cyan-500/10 text-cyan-400">
-                    <Building2 className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-400 mb-1">Current Company</p>
-                    <p className="text-xl font-semibold text-white">{personalInfo.currentCompany}</p>
-                    <p className="text-sm text-gray-500 mt-1">Previously at {personalInfo.previousCompany}</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Project Card */}
-              <div className="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 hover:border-indigo-500/50 transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>
-                <div className="relative flex items-start gap-4">
-                  <div className="p-3 rounded-xl bg-indigo-500/10 text-indigo-400">
                     <Briefcase className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400 mb-1">Current Project</p>
-                    <p className="text-xl font-semibold text-white">{personalInfo.currentProject}</p>
-                    <p className="text-sm text-gray-500 mt-1">Enterprise CRM Solution</p>
+                    <p className="text-sm text-gray-400 mb-1">Role</p>
+                    <p className="text-xl font-semibold text-white">Technical Consultant</p>
+                    <p className="text-sm text-gray-500 mt-1">Microsoft Dynamics 365 CRM</p>
                   </div>
                 </div>
               </div>
@@ -120,8 +105,8 @@ const About = ({ personalInfo, aboutText }) => {
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 pt-6">
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <p className="text-3xl font-bold text-cyan-400">{personalInfo.experience}</p>
-                  <p className="text-sm text-gray-400 mt-1">Experience</p>
+                  <p className="text-3xl font-bold text-cyan-400">Experienced</p>
+                  <p className="text-sm text-gray-400 mt-1">Professional</p>
                 </div>
                 <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                   <p className="text-3xl font-bold text-indigo-400">50+</p>
