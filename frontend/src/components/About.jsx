@@ -39,13 +39,24 @@ const About = ({ personalInfo, aboutText }) => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
-            {/* Left Column - Info Cards */}
+            {/* Left Column - Profile Image & Info Cards */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.4, duration: 0.8 }}
               className="space-y-6"
             >
+              {/* Profile Image */}
+              <div className="flex justify-center md:justify-start mb-8">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-indigo-500 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                  <img
+                    src={personalInfo.profileImage}
+                    alt={personalInfo.name}
+                    className="relative w-48 h-48 rounded-full object-cover border-4 border-white/10 group-hover:border-cyan-500/50 transition-all duration-300"
+                  />
+                </div>
+              </div>
               {/* Company Card */}
               <div className="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] backdrop-blur-sm border border-white/10 hover:border-cyan-500/50 transition-all duration-300">
                 <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl"></div>

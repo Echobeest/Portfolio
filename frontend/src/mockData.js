@@ -12,7 +12,8 @@ export const personalInfo = {
   email: "prajwal.kakandaki@example.com",
   phone: "+91 98765 43210",
   linkedin: "https://linkedin.com/in/prajwalkakandaki",
-  github: "https://github.com/prajwalkakandaki"
+  github: "https://github.com/prajwalkakandaki",
+  profileImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_azure-engineer-1/artifacts/eeu9lo55_Profile%20Photo.png"
 };
 
 export const aboutText = {
