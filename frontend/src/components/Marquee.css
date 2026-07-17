@@ -1,0 +1,19 @@
+.marquee-container {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  width: 100%;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
