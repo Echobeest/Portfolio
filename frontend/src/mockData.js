@@ -8,8 +8,8 @@ export const personalInfo = {
   location: "India",
   email: "prajwalkakandaki1@gmail.com",
   phone: "+91 72593 51598",
-  linkedin: "https://linkedin.com/in/prajwalkakandaki",
-  github: "https://github.com/prajwalkakandaki",
+  linkedin: "https://www.linkedin.com/in/prajwal-kakandaki-b8770a186/",
+  github: "https://github.com/Echobeest/",
   profileImage: "https://customer-assets-4nw71qhi.emergentagent.net/job_azure-engineer-1/artifacts/eeu9lo55_Profile%20Photo.png",
   resumeUrl: "https://customer-assets-4nw71qhi.emergentagent.net/job_azure-engineer-1/artifacts/0as34nwd_Prajwal_Kakandaki%20Resume%20%281%29.pdf"
 };
