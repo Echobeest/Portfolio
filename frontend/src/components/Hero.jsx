@@ -80,7 +80,7 @@ const Hero = ({ personalInfo }) => {
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4"
               >
                 Prajwal
               </motion.h1>
@@ -90,7 +90,7 @@ const Hero = ({ personalInfo }) => {
                 initial={{ y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent"
+                className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent"
               >
                 Kakandaki
               </motion.h1>

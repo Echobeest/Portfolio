@@ -104,12 +104,12 @@ const About = ({ personalInfo, aboutText }) => {
 
               {/* Stats */}
               <div className="grid grid-cols-2 gap-4 pt-6">
-                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <p className="text-3xl font-bold text-cyan-400">Experienced</p>
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 overflow-hidden">
+                  <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-cyan-400 truncate" data-testid="about-stat-experience">Experienced</p>
                   <p className="text-sm text-gray-400 mt-1">Professional</p>
                 </div>
-                <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-                  <p className="text-3xl font-bold text-indigo-400">50+</p>
+                <div className="p-4 rounded-xl bg-white/5 border border-white/10 overflow-hidden">
+                  <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-indigo-400 truncate" data-testid="about-stat-projects">50+</p>
                   <p className="text-sm text-gray-400 mt-1">Projects</p>
                 </div>
               </div>

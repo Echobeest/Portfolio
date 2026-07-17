@@ -1,0 +1,67 @@
+{
+  "summary": "Frontend responsive layout verification for About section stats cards and Hero name headings across mobile (375x667), tablet (768x1024), and desktop (1920x1080). The primary reported bug (Experienced/50+ cards overlap on mobile) is FIXED. However, testing surfaced two additional issues that were part of the acceptance criteria and one visual regression at the tablet breakpoint caused by the fix approach.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "About.jsx (stats grid)",
+        "issue": "TABLET (768px): 'Experienced' text is TRUNCATED to 'Experien...' inside the stat card. At sm breakpoint (>=640px) the font becomes text-2xl (24px). The word 'Experienced' at 24px requires ~143px, but the card inner width is only ~126px (card width 160px minus p-4 padding). The `truncate` class prevents overflow into the neighbor card, but the ellipsis result is a visual regression clearly visible in screenshot /app/test_reports/about_tablet.png and /app/test_reports/about_tablet_detail.png.",
+        "selector": "[data-testid=\"about-stat-experience\"]",
+        "priority": "HIGH"
+      },
+      {
+        "component": "Experience.jsx (timeline)",
+        "issue": "MOBILE + TABLET horizontal page overflow: the timeline node dots use classes 'absolute left-0 ... transform md:-translate-x-1/2' but on mobile the -translate-x-1/2 (~half its own width) plus 'left-0' inside a 'pl-8' padded container places them at left:-26 to -29 px, which extends past the section boundary causing 26px of horizontal scroll on the whole page. Detected on both 375px and 768px viewports.",
+        "selector": ".animate-ping, div[class*='rounded-full'][class*='bg-gradient-to-br from-cyan-400 to-indigo-400']",
+        "priority": "HIGH"
+      },
+      {
+        "component": "SkillsMarquee / marquee-content",
+        "issue": "The marquee scroller has width 7273px (mobile) / 11098px (tablet) and its wrapper does NOT clip horizontal overflow. This contributes to page-level horizontal scroll on mobile & tablet. Marquee items positioned at left:-903 to -369 and extend to right:6904+. Parent must have overflow-x-hidden.",
+        "selector": ".marquee-content",
+        "priority": "HIGH"
+      },
+      {
+        "component": "Hero.jsx (background blobs)",
+        "issue": "The decorative background circles use w-96 (384px) which is larger than the 375px mobile viewport. Positioned at 'left-1/4' and 'right-1/4' they push to right:478 and left:-103, contributing to horizontal overflow. Should be constrained via overflow-hidden on the section (Hero section does have overflow-hidden, so this is contained inside Hero itself, but confirms the pattern).",
+        "selector": ".bg-cyan-500\\/20.rounded-full.blur-3xl",
+        "priority": "MEDIUM"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "About section - tablet (768x1024)",
+        "issues": [
+          "Stat card 'Experienced' shows as 'Experien...' with ellipsis due to text-2xl being too large for the sm:grid-cols-2 layout at md breakpoint. Suggest using text-lg or text-xl at sm breakpoint (e.g., 'text-xl md:text-xl lg:text-3xl') OR shorten the label to 'Expert' at sm, OR remove `truncate` and let it wrap with leading-tight."
+        ]
+      }
+    ]
+  },
+  "test_report_links": [
+    "/app/test_reports/about_mobile.png",
+    "/app/test_reports/about_tablet.png",
+    "/app/test_reports/about_tablet_detail.png",
+    "/app/test_reports/about_desktop.png",
+    "/app/test_reports/hero_mobile.png"
+  ],
+  "action_items": [
+    "TABLET FIX: In About.jsx line 108, adjust the Experienced text sizing so it doesn't get truncated with ellipsis at the sm/md breakpoint. Options: (a) use `text-lg sm:text-xl lg:text-3xl` to keep it small enough to fit at 768px, or (b) remove `truncate` and add `leading-tight` allowing a 2-line wrap, or (c) shorten label at tablet (e.g., use responsive text swap).",
+    "MOBILE HORIZONTAL SCROLL FIX 1: In Experience.jsx, the timeline node dots (with classes 'absolute left-0 ... -translate-x-1/2 ping') on mobile land at negative left coords (-26 to -29 px). Wrap section with `overflow-x-hidden` OR change to `left-4 -translate-x-1/2` on mobile (`left-4 md:left-1/2`) so the dot doesn't spill left of the section.",
+    "MOBILE HORIZONTAL SCROLL FIX 2: Wrap the SkillsMarquee outer container with `overflow-x-hidden` (or add `overflow-x-clip` on the section) — marquee-content is 7000-11000px wide and currently overflows the viewport causing horizontal scroll.",
+    "Suggested global safety net: add `overflow-x-hidden` to <body> or the top-level layout wrapper as a defensive measure so that no future absolute/marquee element causes page horizontal scroll on small viewports."
+  ],
+  "critical_code_review_comments": [
+    "About.jsx uses `truncate` on the stat number which HIDES a real overflow problem with an ellipsis (silent visual regression on tablet). Prefer fixing the size or allowing wrap rather than hiding with truncate.",
+    "The overall app has no `overflow-x-hidden` on <body> or the top layout wrapper — this makes it fragile against any absolute-positioned decorative element (blobs, marquee, timeline dots) that extends past the viewport. Multiple such elements exist and cause 26px of horizontal scroll on mobile/tablet.",
+    "Hero name headings (Prajwal / Kakandaki) at text-4xl (36px) on mobile fit correctly within the 375px viewport (327px each) — this piece of the fix is correct.",
+    "About stats grid uses `overflow-hidden` on the card wrapper which correctly prevents overflow into neighbor card — the isolation is proper; only the truncation ellipsis is the leftover visual issue on tablet."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "60% (3/5 acceptance criteria fully pass; 2 fail: tablet stats visual + no-horizontal-scroll)"},
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Primary bug (mobile card overlap) is fixed and verified with measured 16px gap between cards and no text overflow at 375px. Two follow-up issues remain: (1) tablet 768px 'Experienced' truncates to 'Experien...' — needs sizing fix in About.jsx line 108; (2) whole-page horizontal scroll of 26px on mobile+tablet caused by Experience.jsx timeline dots (left:-26px) and .marquee-content (7000-11000px width) not being clipped by ancestor overflow-x-hidden. Suggest also adding `overflow-x-hidden` to body/root wrapper as a defensive fix. Screenshots saved in /app/test_reports/ (about_mobile.png, about_tablet.png, about_tablet_detail.png, about_desktop.png, hero_mobile.png). Measurements: Mobile card gap=16px, exp font=20px, no card overlap; Tablet card gap=16px, exp font=24px, TEXT TRUNCATED (scrollWidth 143 > clientWidth 126); Desktop card gap=16px, exp font=30px, all fits.",
+  "rca of the issue": "TABLET TRUNCATION RCA: About.jsx line 108 uses `text-xl sm:text-2xl lg:text-3xl truncate`. At Tailwind sm breakpoint (>=640px) font becomes 24px. The parent grid `grid-cols-2 gap-4` inside a max-w constrained column gives each card ~160px width. After p-4 padding (16px each side), inner content width is ~126px. The word 'Experienced' at font-bold 24px renders at ~143px, exceeding container by 17px. The `truncate` class (overflow: hidden + text-overflow: ellipsis + white-space: nowrap) then hides this by rendering 'Experien...'. Fix: reduce sm font size to text-xl or allow wrapping. HORIZONTAL SCROLL RCA: Two sources — (a) Experience.jsx timeline dots absolutely positioned at `left-0` with `-translate-x-1/2` places them 8px left of container which is already at page edge, spilling ~26px left of viewport; (b) Marquee content is intentionally 7000-11000px wide for infinite scroll effect but its wrapper lacks overflow-x-hidden. Mitigation: add overflow-x-hidden at body/root level."
+}
