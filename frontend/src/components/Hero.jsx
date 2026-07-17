@@ -82,7 +82,7 @@ const Hero = ({ personalInfo }) => {
                 transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4"
               >
-                {personalInfo.name.split(' ')[0]}
+                Prajwal
               </motion.h1>
             </div>
             <div className="mb-8 overflow-hidden">
@@ -92,7 +92,7 @@ const Hero = ({ personalInfo }) => {
                 transition={{ delay: 0.5, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-cyan-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent"
               >
-                {personalInfo.name.split(' ')[1]}
+                Kakandaki
               </motion.h1>
             </div>
 
