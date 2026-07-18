@@ -31,31 +31,32 @@ export const skills = [
 export const experience = [
   {
     id: 1,
-    company: "Infosys",
-    role: "Microsoft Dynamics 365 CRM Technical Consultant",
-    period: "2021 - Present",
-    project: "Microsoft Land & Lease",
-    description: "Leading CRM technical implementation for enterprise land and lease management solution. Architecting scalable solutions using Dynamics 365, Power Platform, and Azure services.",
+    company: "Infosys Ltd",
+    role: "Microsoft Dynamics 365 Technical Consultant",
+    period: "Jul 2024 - Present",
+    project: "Microsoft — Land & Lease",
+    description: "Working directly with Microsoft Full-Time Engineers (FTEs) on an internal Dynamics 365 CE project. Designing scalable solutions using Dataverse, C# plugins, and Power Platform.",
     achievements: [
-      "Architected and implemented complex approval workflows using Power Automate",
-      "Developed 15+ custom plugins and workflow activities for business logic",
-      "Built PCF controls for enhanced user experience",
-      "Integrated Azure Functions for external system connectivity",
-      "Reduced processing time by 40% through optimization"
+      "Designing and developing C# plugins using Dataverse SDK",
+      "Implementing Power Automate flows for business process automation",
+      "Handling Dataverse Web API integrations with external systems",
+      "Resolving plugin execution, OData, and production issues",
+      "Supporting deployments across Dev, Test, and Production environments"
     ]
   },
   {
     id: 2,
     company: "Sonata Software",
-    role: "Power Platform Developer",
-    period: "2019 - 2021",
-    project: "Multiple CRM Implementations",
-    description: "Delivered multiple Dynamics 365 CRM solutions for various clients across industries. Focused on customization, integration, and automation.",
+    role: "Dynamics 365 Developer",
+    period: "Sept 2022 - Jun 2024",
+    project: "Multiple Client Engagements",
+    description: "Delivered multiple Dynamics 365 CE solutions for enterprise and non-profit clients. Specialized in Field Service, ISV customizations, and integrations with external platforms like SAP.",
     achievements: [
-      "Implemented 10+ CRM solutions for different business verticals",
-      "Created reusable Power Apps components library",
-      "Automated business processes saving 100+ hours monthly",
-      "Trained junior developers on Power Platform best practices"
+      "Implemented Dynamics 365 Field Service for Southern California Edison, replacing legacy CLICK CRM",
+      "Built Canvas Apps and configured SLA automation workflows",
+      "Integrated SAP with Dynamics 365 using Web API for Southern California Edison",
+      "Customized Dynamics 365 CE ISV model-driven application for World Vision Canada's Fundraising & Engagement (F&E) operations",
+      "Delivered non-profit fundraising CRM customizations end-to-end"
     ]
   }
 ];
