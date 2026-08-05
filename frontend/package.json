@@ -33,6 +33,8 @@
     "@radix-ui/react-tooltip": "1.2.4",
     "@studio-freight/lenis": "^1.0.42",
     "@tanstack/react-query": "5.56.2",
+    "ajv": "^8.17.1",
+    "ajv-keywords": "^5.1.0",
     "axios": "1.16.0",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
@@ -68,8 +70,8 @@
     "test": "craco test"
   },
   "engines": {
-  "node": "20.x"
-},
+    "node": "20.x"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
